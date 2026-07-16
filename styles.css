@@ -1,0 +1,195 @@
+:root {
+  --blue: #1A436C;
+  --olive: #7C7905;
+  --pink: #FF98BB;
+  --magenta: #BA1650;
+  --mauve: #AE6E9D;
+  --gray: #CCCCCC;
+
+  --ink: #211D18;
+
+  --font-body: 'Tahoma', Verdana, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--gray);
+  line-height: 1.6;
+}
+
+img { max-width: 50%; display: block; }
+
+a {
+  color: var(--blue);
+}
+a:hover, a:focus { color: var(--magenta); }
+
+:focus-visible {
+  outline: 3px solid var(--magenta);
+  outline-offset: 2px;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3 {
+  font-family: var(--font-body);
+  color: var(--blue);
+  line-height: 1.15;
+}
+
+h1 { font-size: 2.6rem; margin: 0 0 0.4rem; }
+h2 { font-size: 1.7rem; margin-top: 2rem; border-bottom: 2px solid var(--gray); padding-bottom: 0.3rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+
+p { max-width: 68ch; }
+
+/* Styling-change examples (bold / size / color) across the site */
+strong { font-weight: 700; color: var(--blue); }
+em { font-style: italic; color: var(--magenta); }
+mark {
+  background: var(--pink);
+  color: var(--ink);
+  padding: 0 0.25em;
+  border-radius: 3px;
+}
+.lede {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--magenta);
+}
+small.caption {
+  display: block;
+  font-size: 0.85rem;
+  color: #55504a;
+  margin-top: 0.35rem;
+}
+
+/* ---------- Layout shell ---------- */
+header.site-header {
+  background: var(--blue);
+  color: #ffffff;
+  padding: 1.2rem 1.5rem;
+}
+
+.site-header .brand {
+  /* The one intentional serif element on the site — see --font-serif above */
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  margin: 0 0 0.6rem;
+  color: #ffffff;
+}
+
+nav.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+}
+
+nav.site-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.3rem 0.5rem;
+  border-bottom: 2px solid transparent;
+}
+
+nav.site-nav a:hover,
+nav.site-nav a:focus {
+  border-bottom: 2px solid var(--pink);
+  color: #ffffff;
+}
+
+nav.site-nav a[aria-current="page"] {
+  border-bottom: 2px solid var(--pink);
+  font-weight: 600;
+}
+
+main {
+  max-width: 960px;
+  margin: 1.6rem auto;
+  padding: 2.2rem 1.8rem 2.6rem;
+  background: #ffffff;
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+}
+
+footer.site-footer {
+  background: var(--blue);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+}
+
+footer.site-footer a { color: var(--pink); }
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--mauve);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  margin: 1rem 0;
+}
+
+dl.term-list dt {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--olive);
+  margin-top: 0.8rem;
+}
+dl.term-list dd {
+  margin: 0.15rem 0 0;
+}
+
+.figure {
+  margin: 1.2rem 0;
+}
+.figure img {
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Lesson card grid, used on the three lesson pages */
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 1.2rem 0;
+}
+.lesson-grid .card img { margin-bottom: 0.6rem; }
+
+.trainers-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.8rem;
+  align-items: start;
+}
+
+.trainers-layout .map-figure img {
+  width: 100%;
+}
+
+@media (max-width: 680px) {
+  .trainers-layout { grid-template-columns: 1fr; }
+  h1 { font-size: 2.1rem; }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.hero .figure img { width: 100%; }
+
+@media (max-width: 680px) {
+  .hero { grid-template-columns: 1fr; }
+}
